@@ -1,0 +1,108 @@
+/* --- Custom Variables & Reset --- */
+:root {
+    --primary-color: #0d6efd;
+    --hero-bg: #f8f9fa;
+    --transition-speed: 0.3s;
+}
+
+body {
+    background-color: #f4f7f6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #333;
+}
+
+/* --- Hero Section Styling --- */
+.hero-card {
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed) ease;
+}
+
+.hero-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.hero-list span {
+    font-size: 1.05rem;
+}
+
+.hero-note {
+    border-left: 4px solid #0dcaf0;
+    background-color: #f0faff;
+}
+
+.hero-cta {
+    transition: all var(--transition-speed) ease;
+}
+
+.hero-cta:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* --- Table & UI Refinements --- */
+.table-responsive {
+    border-radius: 8px;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    border-top: none;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* --- Role-Based Visibility --- */
+/* Elements with this class will only be shown to Admin roles via JS logic */
+.role-admin {
+    border-left: 3px solid #ffc107;
+}
+
+/* --- Navigation --- */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.dropdown-item:active {
+    background-color: var(--primary-color);
+}
+
+/* --- Animations for switching sections --- */
+section {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 2rem !important;
+    }
+    
+    .display-5 {
+        font-size: 1.75rem;
+    }
+}
